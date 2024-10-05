@@ -1,0 +1,178 @@
+ 1. Explain the purpose and advantages of NumPy in scientific computing and data analysis. How does it enhance Python's capabilities for numerical operations?
+
+Ans: -> NumPy is a fundamental library in Python for scientific computing. 
+     -> It offers powerful features for working with multidimensional arrays and performing various mathematical operations efficiently.
+     -> NumPy (Numerical Python) is an open source Python library that has a wide range of inbuilt functions.
+     -> NumPy is ideal for handling large amounts of homogeneous (same-type) data, offering significant improvements in speed and memory efficiency. 
+     -> It also provides high-level syntax for a wide range of numerical operations, making it a powerful tool for scientific computing and data processing on the CPU.
+     -> numpy is built in using C, c is one of the fastest programming language after C++, so mathematical computation is very fast.
+
+2. Compare and contrast np.mean() and np.average() functions in NumPy. When would you use one over the other?
+
+Ans:  np.mean() and np.average() functions in NumPy are both used to calculate the average value of an array.
+
+      -> np.mean() is suitable for simple arithmetic values
+      -> np.average() is more versatile for weighted averages and handling missing values.
+
+3. Describe the methods for reversing a NumPy array along different axes. Provide examples for 1D and 2D arrays.
+
+Ans:       import numpy as np
+
+            a = np.array(range(20))
+            b = a[::-1]
+
+            print('reverse arrey of 1-d is', b)
+
+
+            c = np.array([[1, 2, 3],
+                         [4, 5, 6],
+                         [7, 8, 9]])
+		d = c[0][::-1]
+		e = c[1][::-1]
+		f = c[2][::-1]
+		g = np.array([d, e, f])
+
+
+		print('reverse arrey of 2-d is', g)
+
+4. How can you determine the data type of elements in a NumPy array? Discuss the importance of data types in memory management and performance.
+
+Ans:  ->  NumPy arrays can hold various data types like integers (int), floats (float), strings (str), etc.
+      ->  You can specify the data type during creation or let NumPy infer it.
+      ->  .dtype attribute reveals the data type of the elements in the array
+
+
+5. Define ndarrays in NumPy and explain their key features. How do they differ from standard Python lists?
+
+Ans: key features of NumPy's ndarrays:
+
+     -> Homogeneous Data Type  : All elements in an ndarray must have the same data type, ensuring efficient memory usage and optimized operations.
+     -> Multidimensionality    : ndarrays can represent data in multiple dimensions.
+     -> Efficient Operations   : NumPy ndarrays are optimized for numerical operations, such as arithmetic, matrix multiplication, and linear algebra etc.
+     -> Broadcasting           : NumPy supports broadcasting, allowing for element-wise operations between arrays of different shapes under certain conditions.
+     -> Indexing and Slicing   : ndarrays provide flexible indexing and slicing capabilities for accessing and manipulating elements.
+
+     Key Differences from Standard Python Lists:
+
+     -> Data Type Homogeneity  : Python lists can store elements of mixed data types, while ndarrays require all elements to have the same data type.
+     -> Performance            : NumPy ndarrays are significantly faster than Python lists for numerical operations, especially for large datasets.
+     -> Multidimensionality    : ndarrays can represent data in multiple dimensions, while Python lists are inherently one-dimensional.
+     -> Broadcasting           : NumPy ndarrays support broadcasting, which is not available for Python lists.
+
+6. Analyze the performance benefits of NumPy arrays over Python lists for large-scale numerical operations.
+
+Ans:  NumPy arrays offer significant performance advantages over Python lists for large-scale numerical operations due to several key factors:
+
+      1. Memory Efficiency:
+           Contiguous Storage: NumPy arrays store elements in a contiguous block of memory, allowing for efficient access and manipulation.
+           Vectorization     : NumPy operations can be performed on entire arrays at once, avoiding Python's loop overhead and improving memory access patterns.
+
+      2. Computational Efficiency:
+           Broadcasting: NumPy's broadcasting mechanism allows for automatic element-wise operations between arrays of different shapes, eliminating the need for explicit loops.
+
+      Example:
+			import numpy as np
+
+			a = np.array([1, 2, 3])
+			b = np.array([4, 5, 6])
+
+         # Element-wise addition
+                  result = a + b
+                  print(result)  # Output: [5 7 9]
+
+         # Element-wise multiplication
+                  result = a * b
+                  print(result)  # Output: [4 10 18]
+
+7. Compare vstack() and hstack() functions in NumPy. Provide examples demonstrating their usage and output.
+
+Ans:  this topic not explained
+
+8. Explain the differences between fliplr() and flipud() methods in NumPy, including their effects on various array dimensions
+
+Ans:  this topic not explained
+
+9. Discuss the functionality of the array_split() method in NumPy. How does it handle uneven splits?
+
+Ans: -> the array_split() method in NumPy used to split an array into a specified number of sub-arrays. 
+     -> this mostly devided the original arrey in to different sub arrey.
+
+	example: import numpy as np
+
+		   new_arrey = np.arange(20)
+
+		   np.split(new_arrey, 4)
+
+10. Explain the concepts of vectorization and broadcasting in NumPy. How do they contribute to efficient array operations?
+
+Ans:  Vectorization:
+         Performing operations on entire arrays or matrices at once, rather than iterating over individual elements.
+
+       import numpy as np
+
+       array1 = np.array([[1, 2, 3],
+                          [4, 5, 6]])
+
+       array2 = np.array([[7, 8, 9],
+                          [10, 11, 12]])
+
+       result = array1 + array2
+
+      Broadcasting:
+       ->  Broadcasting is a mechanism in NumPy that allows performing operations on arrays of different shapes under certain conditions.
+       ->  When operands have different shapes, NumPy expands the smaller array to match the larger one in a specific way to perform element-wise operations.
+
+		example:  
+                    Original Array:
+
+						[[1 2 3]
+						 [4 5 6]
+						 [7 8 9]]
+
+					addition: 5
+
+			  Broadcasted Scalar:
+
+						[[5 5 5]
+						 [5 5 5]
+						 [5 5 5]]
+
+			  		  Result:
+
+						[[6 7 8]
+						 [9 10 11]
+						 [12 13 14]]
+
+
+				## here is the Visual Representation of broadcasting mechanism
+				[[1 2 3]
+				 [4 5 6]
+				 [7 8 9]] + [[5 5 5]
+						 [5 5 5]
+						 [5 5 5]] = [[6 7 8]
+								 [9 10 11]
+								 [12 13 14]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
